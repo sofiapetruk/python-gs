@@ -1,0 +1,72 @@
+def escolhaInformacoes():
+    '''
+    Essa função serve para o usuário escolher a opção para assim depois saber a curiosidade.
+
+    Parâmetros ()
+
+    Retornará a opcao feita pelo o usuário.
+    '''
+    opcao = -1
+    while opcao < 1 or opcao > 5:
+        print('1 - Corais')
+        print('2 - Peixes em extinção')
+        print('3 - Pesca sustentável')
+        print('4 - Clima e Oceano')
+        print('5 - Redução do lixo ')
+        opcao = int(input('Digite uma opção: '))
+        if opcao < 1 or opcao > 5:
+            print('Opção inválida. Tente novamente')
+    return opcao
+
+def informacao(opcao):
+    '''
+    Essa função serve para receber a opcao e retornar a escolha dele. 
+    (Foi utilizado lista ao invés do print, por causa se quiser mudar alguma coisa é mais fácil de manipular)
+
+    Parâmetros int(opcao)
+
+    Retornará a cursiosidade escolhida pelo o usuário.
+    '''
+    curiosidades = [
+        '''
+        O branqueamento dos corais, que afeta 54 países, é um problema sério que ameaça a pesca, o turismo e o clima. Esses recifes,
+        vitais para a biodiversidade marinha, são impactados por diversos fatores, incluindo o aumento da temperatura da água. É crucial
+        tomar medidas como reduzir a poluição e combater as mudanças climáticas para protegê-los. A preservação dos recifes de corais é 
+        essencial para a saúde do planeta.''',
+
+        '''
+        A vida marinha enfrenta um futuro sombrio devido à sobrepesca, poluição, mudanças climáticas e destruição do habitat. Essas 
+        ameaças dizimam populações, sufocam oceanos com plástico, danificam ecossistemas e devastam habitats costeiros. Para proteger 
+        nossos oceanos e garantir a saúde do planeta, medidas urgentes como áreas marinhas protegidas, pesca regulamentada e redução 
+        do plástico descartável são cruciais.''', 
+
+        '''
+        A sobrepesca devasta populações de peixes, desequilibra ecossistemas marinhos, prejudica comunidades costeiras e compromete 
+        a segurança alimentar. Combater essa crise exige gestão pesqueira sustentável e conscientização sobre a preservação dos oceanos.''',
+
+        '''
+        Oceano e clima se influenciam: calor é absorvido e liberado, impactando temperatura e vento. Correntes transportam calor e 
+        umidade, afetando chuva e temperatura em diversas regiões. Mudanças nos oceanos, como aquecimento e acidificação, impactam 
+        significativamente o clima global. Os oceanos regulam o CO2 na atmosfera, sendo cruciais na mitigação das mudanças climáticas. 
+        Compreender essa relação é essencial para agir contra as mudanças climáticas e proteger a saúde dos oceanos e do planeta.''', 
+                    
+        '''
+        O lixo plástico nos oceanos, especialmente os microplásticos, representa uma grave ameaça aos ecossistemas marinhos. 
+        Milhões de toneladas de plástico são descartadas nos oceanos anualmente, causando danos à vida marinha e aos habitats. Os 
+        microplásticos, em particular, são ingeridos por organismos marinhos, causando problemas de saúde e morte.'''
+    ]
+    
+    return curiosidades[opcao - 1]
+
+# main
+while True:
+
+    opcao = escolhaInformacoes()
+    curiosidade = informacao(opcao)
+    print(curiosidade)
+    print('------------------------------------------------------------')
+
+    pergunta = input('Deseja saber mais alguma coisa? (s/n): ').lower()
+    if pergunta != 's':
+            print("Obrigado por usar a SeaCure!")
+            break
