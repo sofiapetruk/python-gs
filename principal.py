@@ -200,16 +200,20 @@ def pontoQuiz(perguntas):
         resposta = int(input("Escolha a alternativa correta (1, 2 ou 3): "))
         if resposta == q["resposta"]:
             acertos += 1
-            print("\nResposta correta!")
+            print('------------- / ----------------- / ---------------- / -------')
+            print("Resposta correta!")
+            print('------------- / ----------------- / ---------------- / -------')
         else:
             erros += 1
-            print("\nResposta incorreta.")
+            print('------------- / ----------------- / ---------------- / -------')
+            print("Resposta incorreta.")
+            print('------------- / ----------------- / ---------------- / -------')
 
     print(f"\nVocê acertou {acertos} e errou {erros} de um total de {len(perguntas)} questões.")
 
 def controladora(escolha, ocorrencias):
     if escolha == 1:
-        ocorrencias = registrarOcorrencia()
+        ocorrencias = registrarOcorrencia(ocorrencias)
         print('------------- / ----------------- / ---------------- / -------')
     elif escolha == 2:
         consultaOcorrencia(ocorrencias)
